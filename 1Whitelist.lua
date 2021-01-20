@@ -1,6 +1,6 @@
-_G.Key = ""
-Whitelistkey = ""
-BlacklistKey = ""
+_G.Key = "Test"
+Whitelistkey = "https://raw.githubusercontent.com/ChitogeKazuto/Nebula-X/NebuleX/2WhitelistKey.lua"
+BlacklistKey = "https://raw.githubusercontent.com/ChitogeKazuto/Nebula-X/NebuleX/2BlacklistKey.lua"
 
 Key = game:HttpGet(Whitelistkey, true)
 Banned = game:HttpGet(BlacklistKey, true)
