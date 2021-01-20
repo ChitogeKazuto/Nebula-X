@@ -38,3 +38,16 @@ JumpPowerSection:addToggle("Enable JumpPower", false, function(Value)
         game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = JumpPowerSettings.NJump
     end
 end)
+
+local SettingsPage = NebuleX:addPage("Settings", 4483345737)
+local SettingsSection = SettingsPage:addSection("Settings")
+
+SettingsSection:addKeybind("Ui Toggle", Enum.KeyCode.RightControl, function()
+    NebuleX:toggle()
+end)
+
+SettingsSection:addButton("Destroy Ui", function()
+    game:GetService("CoreGui")["Nebule X [Demo]"]:Destroy()
+end)
+
+NebuleX:SelectPage(NebuleX.pages[2], true)
