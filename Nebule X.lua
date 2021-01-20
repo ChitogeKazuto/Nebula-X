@@ -39,6 +39,30 @@ JumpPowerSection:addToggle("Enable JumpPower", false, function(Value)
     end
 end)
 
+local NoClipSection = LocalPlayerPage:addSection("No Clip")
+NoClipSection:addToggle("No Clip", false, function(Value)
+local Noclipping = nil
+Clip = false
+
+if Value == true then
+local function NoclipLoop()
+		if Clip == false and game:GetService("Players").LocalPlayer.Character ~= nil then
+			for _, child in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
+				if child:IsA("BasePart") and child.CanCollide == true and child.Name ~= floatName then
+					child.CanCollide = false
+				end
+			end
+		end
+    end
+Noclipping = game:GetService('RunService').Stepped:Connect(NoclipLoop)
+else
+    if Noclipping then
+		Noclipping:Disconnect()
+	end
+    Clip = true
+end
+end)
+
 local SettingsPage = NebuleX:addPage("Settings", 4483345737)
 local SettingsSection = SettingsPage:addSection("Settings")
 
