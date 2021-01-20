@@ -47,7 +47,18 @@ SettingsSection:addKeybind("Ui Toggle", Enum.KeyCode.RightControl, function()
 end)
 
 SettingsSection:addButton("Destroy Ui", function()
+    NebuleX:Notify("Nebule X", "Thank You, Good Bye", function()end)
+    wait(3)
     game:GetService("CoreGui")["Nebule X [Demo]"]:Destroy()
 end)
 
 NebuleX:SelectPage(NebuleX.pages[2], true)
+
+wait(1)
+NebuleX:Notify("Nebule X", "Welocme To Nabule X", function()end)
+wait(2)
+NebuleX:Notify("Nebule X", "Unknow Game", function()end)
+wait(2)
+NebuleX:Notify("Nebule X", "Don't Have Anti Cheats/Hacks", function()end)
+wait(2)
+NebuleX:Notify("Nebule X", "Ban Risk Is Extremely High", function()end)
