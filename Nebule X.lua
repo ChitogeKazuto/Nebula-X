@@ -47,6 +47,8 @@ SettingsSection:addKeybind("Ui Toggle", Enum.KeyCode.RightControl, function()
 end)
 
 SettingsSection:addButton("Destroy Ui", function()
+    NebuleX:toggle()
+    wait(1)
     game:GetService("CoreGui")["Nebule X [Demo]"]:Destroy()
 end)
 
