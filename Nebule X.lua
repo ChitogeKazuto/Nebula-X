@@ -12,7 +12,7 @@ JumpPowerSettings = {
 local LocalPlayerPage = NebuleX:addPage("LocalPlayer", 4384401919)
 local WalkSpeedSection = LocalPlayerPage:addSection("WalkSpeed")
 
-WalkSpeedSection:addSlider("Speed", WalkSpeedSettings.NSpeed, 0, 300, function(Value)
+local WS = WalkSpeedSection:addSlider("Speed", WalkSpeedSettings.NSpeed, 0, 300, function(Value)
     _G.Speed = Value
 end)
 WalkSpeedSection:addToggle("Enable WalkSpeed", false, function(Value)
@@ -26,7 +26,7 @@ WalkSpeedSection:addToggle("Enable WalkSpeed", false, function(Value)
 end)
 
 local JumpPowerSection = LocalPlayerPage:addSection("JumpPower")
-JumpPowerSection:addSlider("Jump", JumpPowerSettings.NJump, 0, 300, function(Value)
+local JS = JumpPowerSection:addSlider("Jump", JumpPowerSettings.NJump, 0, 300, function(Value)
     _G.Jump = Value
 end)
 JumpPowerSection:addToggle("Enable JumpPower", false, function(Value)
@@ -74,6 +74,17 @@ SettingsSection:addButton("Destroy Ui", function()
     NebuleX:Notify("Nebule X", "Thank You, Good Bye", function()end)
     wait(3)
     game:GetService("CoreGui")["Nebule X [Demo]"]:Destroy()
+end)
+
+local LocalPlayerSettingsSection = SettingsPage:addSection("LocalPlayer Settings")
+LocalPlayerSettingsSection:addTextbox("Max WalkSpeed", WalkSpeedSettings.NSpeed, function(Value)
+    _G.SpeedMax = Value
+end)
+LocalPlayerSettingsSection:addTextbox("Min WalkSpeed", WalkSpeedSettings.NSpeed, function(Value)
+    _G.SpeedMin = Value
+end)
+LocalPlayerSettingsSection:addButton("Update WalkSpeed", function()
+    WalkSpeedSection:updateSlider(WS, "Speed", WalkSpeedSettings.NSpeed, _G.SpeedMin, _G.SpeedMax)
 end)
 
 NebuleX:SelectPage(NebuleX.pages[2], true)
