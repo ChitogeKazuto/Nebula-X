@@ -122,13 +122,14 @@ end
 
 local key = 'key_synapse'
 local data = http_request({
-	Url = ('https://example.cool/whitelistv2/server.php?key=' .. key);
+	Url = ('https://raw.githubusercontent.com/ChitogeKazuto/Nebula-X/NebuleX/Whitelist/server.php?key=' .. key);
 	Method = 'GET';
 })
 
 if data.StatusCode == 200 then
 	local response = data.Body;
-	if response == hash(key) then
+    if response == hash(key) then
+        local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ChitogeKazuto/Nebula-X/NebuleX/Nebule%20X.lua"))()
 		print("whitelisted!")
 	end
 end

@@ -8,7 +8,7 @@ $database = array(
 	),
 	array(
 		"key" => "key_sirhurt",
-		"hwid" => "81ECAE2DD1AAADA537121E61D5C0280C"
+		"hwid" => ""
 	),
 	array(
 		"key" => "key_protosmasher",
@@ -16,7 +16,7 @@ $database = array(
 	),
 	array(
 		"key" => "key_synapse",
-		"hwid" => ""
+		"hwid" => "034dc0d21912acf471a9d5293241cb0581dcd441f0d29d8f06a38cb4a81610e4467c6e6f4ecef77a1fb89b64c0fd3f4712c0e2be252f0cfcfe3075187fdc5ccf"
 	),
 );
 
