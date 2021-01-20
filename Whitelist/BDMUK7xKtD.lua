@@ -1,5 +1,3 @@
-_G.Key = "BDMUK7xKtD"
-
 local Name = game:GetService("Players").LocalPlayer.Character.Name
 
 if _G.Key == "BDMUK7xKtD" then
